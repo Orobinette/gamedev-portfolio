@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Robinette - Bag Boy Blitz</title>
+</head>
+<body>
+    <nav id="navbar">
+        <h1>Olive Robinette</h1>
+        <ul>
+            <li><a href="index.html">Games</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <h1>Bag Boy Blitz</h1>
+    <p>(gif goes here)</p>
+    <p><i>A puzzle stacker in the world's most confused grocery store</i></p>
+
+    <h2>About</h2>
+    <p>
+        In development
+        <br><br>
+        Platforms: PC
+        <br><br>
+        Engine and tools: Godot, Aseprite, Audacity, Reaper
+        <br><br>
+        Contributions: Solo developer
+    </p>
+
+
+    <h2>Key Features</h2>
+
+    <h3>Item generation system</h3>
+    <p>
+        There are dozens of items in Bag Boy Blitz, each with many unique components, 
+        some of which, like their collision shapes, can create bugs if created incorrectly. 
+        To save time and eliminate room for human error, 
+        I made a tool script which automates the process of adding new items.
+        <br><br>
+        Every item has an associated 2d array representing its shape on the game grid. 
+        The dimensions of the array match the dimensions of the items, 
+        where 0s represent grid tiles that aren't taken up while 1s represent spaces that are. 
+        When I create a new item prefab object, the tool script uses an algorithm to generate 
+        an array of coordinates from the 2d array which are used to 
+        instantly generate the correct commission shape every time.
+        <br><br>
+        Additionally, the script takes the id of the object and searches the file system for 
+        every asset that needs to be added to the prefab, such as sprites and animations. 
+        This saves a significant amount of time by eliminating the need to 
+        manually drag and drop 100s of assets between the file system and the editor
+    </p>
+
+    <h3>Weight Calculation</h3>
+    <p>(placeholder text)</p>
+
+    <h2>Noteable Game Design</h2>
+
+    <h3>Pillars of difficulty</h3>
+    <p>Difficulty in Bag Boy Blitz is derived from four areas</p>
+    <ol start="1">
+        <li>item weight</li>
+        <li>item durability</li>
+        <li>quantity of items</li>
+        <li>item shape. </li>
+    </ol>
+    <p>
+        I can control the difficulty of the game by adjusting these variables with every new item. 
+        Each store theme leans into one area of difficulty and individual levels are designed to combine it with another 
+        to create new challenges. For example, items in the aquatic theme lean into low durability for difficulty. 
+        One character in the aquatic theme, the angler, introduces a new item with a strange shape. 
+        The challenge of this level is to find a place to put this strangely shaped item that will keep it safe from being crushed
+    </p>
+    
+    <h3>Item perks</h3>
+    <p>Each store theme introduces a new game mechanic that leans into one pillar of difficulty </p>
+    <ol start="1">
+        <li>Winter theme (shape): Items have a chance of spawning frozen. Frozen items can’t be rotated</li>
+        <li>Aquatic theme (durability): The store is flooded! Items placed at the bottom of the bag become waterlogged. 
+            Waterlogged items decreases in durability</li>
+        <li>Convention theme (quantity): the longer you take to clear through a customer, 
+            the more tempted they'll be to grab more merchandise. More items means less space in the bag</li>
+        <li>Underworld theme (weight): customers may buy a Medusa head item. 
+            Medusa heads will petrify any item in their line of site. 
+            Petrified items weigh more</li>
+    </ol>
+    <p>These themes are intended to keep the gameplay from being too repetitive by forcing the player to adjust their bagging strategy.</p>
+
+    <h3>Scoring</h3>
+    <p>After every level, the player is scored in these criteria</p>
+    <ol start="1">
+        <li>Speed</li>
+        <li>Pairs</li>
+        <li>Number of bags used</li>
+        <li>Number of crushed items</li>
+    </ol>    
+    <p>
+        Based on their score, the player is given a letter grade. These grades are an optional challenge 
+        to encourage replayability and add optional difficulty to the skilled player. To 100% the game, 
+        the player must complete a “perfect” run of every level, where each bag is cleared in under 30 seconds, 
+        every item is paired with a like item, the minimum bags are used, and zero items are crushed.
+        <br><br>
+        The reason for including this mechanic was this: when I opened the game to playtesters, 
+        every single one of them struggled to complete even the first couple levels. 
+        I realized that my perception of difficulty had been skewed by countless hours of play-testing. 
+        I, for one, was worried the game didn't have enough challenge. The scoring mechanic was created to bridge the gap. 
+        I lowered the difficulty required to complete each level, but added this optional layer of challenge for 
+        players looking to master the stacking mechanics.
+    </p>
+
+    <h2>Art Direction</h2>
+    <p>
+        Bag Boy Blitz is meant to have a light hearted and silly tone. 
+        A lot of care was put into the art to portray this tone visually with expressive, 
+        easy to read sprites despite the game’s low resolution. Here are some examples of how I achieved this effect.
+    </p>
+
+    <h3>Keep it simple!</h3>
+    <p>
+        With such a low resolution, I had to make the most of the space I had. 
+        Large shapes are colored with 4 colors maximum and detail is rendered minimally.
+        This simpler art style evokes a more cartoonish look which contributes to the unserious tone of the game.
+    </p>
+
+    <h3>Bold colors</h3>
+    <p>
+        Bag Boy Blitz uses saturated, in-your-face colors. 
+        You never see a true black, instead, every outline and shadow uses a dark version of that sprite's primary color.
+    </p>
+
+    <h3>Solid, blocky outlines</h3>
+    <p>
+        Conventionally, pixel art outlines skip corners to more accurately preserve the silhouette of the sprite. 
+        For Bag Boy Blitz, I intentionally used solid outlines to create more blocky sprites, 
+        enhancing the cartoonish quality of the art by deviating from the norm.
+    </p>
+</body>

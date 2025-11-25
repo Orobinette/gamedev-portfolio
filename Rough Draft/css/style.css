@@ -20,20 +20,22 @@ body{
 }
 
 .bounding-box{
-    display: flex;
-    flex-direction: column;
     width: 900px;
     height: fit-content;
+
     margin: 10px auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #navbar {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin: auto;
     padding: 10px;
     width: auto;
-    margin: auto;
 }
 
 #navbar img{
@@ -90,38 +92,49 @@ body{
     outline-width: 5px;
 }
 
-#game-desc-box{
+.content-container{
     background-color: plum;
-    width: 500px;
-    height: 500px;
 
-    outline-style: ridge;
-    outline-width: 5px;
+    width: fit-content;
+    height: fit-content;
+    gap: 5px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+
 }
 
-.game-thumbnail-container{
-    background-color: plum;
+.project-tile{
+    background-color: #fff;
+
+    width: 320px;
+    height: 300px;
+    
+    text-align: center;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    height: fit-content;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-
+    
     outline-style: ridge;
     outline-width: 5px;outline-style: ridge;
     outline-width: 5px;
 }
 
-.game-thumbnail{
-    background-color: black;
-    width: 100px;
-    height: 100px;
+.project-tile:hover{
+    transform: translateY(3px);
 }
 
-.game-thumbnail:hover{
-    transform: translateY(3px);
+
+.project-thumbnail{
+    background-color: red;;
+
+    width: 320px;
+    height: 180px;
+}
+
+.project-desc{
+    padding: 10px;
 }
 
 .art-container{
@@ -136,7 +149,7 @@ body{
     outline-style: ridge;
     outline-width: 5px;outline-style: ridge;
     outline-width: 5px;
-
+    
     transition: .1s ease-in;
 }
 
